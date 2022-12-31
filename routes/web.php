@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 
-Route::get('/',[IndexController::class,'login']);
+Route::get('/',[IndexController::class,'index']);
 Route::post('/login', [IndexController::class, 'login']);
 Route::get('/home',[IndexController::class,'home']);
 Route::get('/guru',[GuruController::class, 'index']);

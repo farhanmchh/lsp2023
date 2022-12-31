@@ -1,8 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-<<<<<<< HEAD
-=======
 
 body {
     font-family: Gotham, Helvetica Neue, Helvetica, Arial, " sans-serif";
@@ -151,4 +149,3 @@ table {
 .text-danger {
     color: red;
 }
->>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
