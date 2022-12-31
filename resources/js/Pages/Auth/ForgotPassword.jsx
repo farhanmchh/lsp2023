@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import React from 'react';
+=======
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
 import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/InputError';
 import PrimaryButton from '@/Components/PrimaryButton';
@@ -24,7 +27,11 @@ export default function ForgotPassword({ status }) {
         <GuestLayout>
             <Head title="Forgot Password" />
 
+<<<<<<< HEAD
             <div className="mb-4 text-sm text-gray-500 leading-normal">
+=======
+            <div className="mb-4 text-sm text-gray-600">
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                 Forgot your password? No problem. Just let us know your email address and we will email you a password
                 reset link that will allow you to choose a new one.
             </div>
@@ -33,7 +40,12 @@ export default function ForgotPassword({ status }) {
 
             <form onSubmit={submit}>
                 <TextInput
+<<<<<<< HEAD
                     type="text"
+=======
+                    id="password"
+                    type="email"
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                     name="email"
                     value={data.email}
                     className="mt-1 block w-full"

@@ -9,17 +9,25 @@
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
+<<<<<<< HEAD
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
+=======
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
             <!-- Email Address -->
             <div>
                 <x-input-label for="email" :value="__('Email')" />
+<<<<<<< HEAD
 
                 <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+=======
+                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
             </div>
 
             <!-- Password -->
@@ -30,19 +38,32 @@
                                 type="password"
                                 name="password"
                                 required autocomplete="current-password" />
+<<<<<<< HEAD
+=======
+
+                <x-input-error :messages="$errors->get('password')" class="mt-2" />
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
             </div>
 
             <!-- Remember Me -->
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">
+<<<<<<< HEAD
                     <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
+=======
+                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
+<<<<<<< HEAD
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+=======
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
+=======
+import { useState } from 'react';
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
 import ApplicationLogo from '@/Components/ApplicationLogo';
 import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
@@ -16,7 +20,11 @@ export default function Authenticated({ auth, header, children }) {
                         <div className="flex">
                             <div className="shrink-0 flex items-center">
                                 <Link href="/">
+<<<<<<< HEAD
                                     <ApplicationLogo className="block h-9 w-auto text-gray-500" />
+=======
+                                    <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800" />
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                                 </Link>
                             </div>
 
@@ -55,6 +63,10 @@ export default function Authenticated({ auth, header, children }) {
                                     </Dropdown.Trigger>
 
                                     <Dropdown.Content>
+<<<<<<< HEAD
+=======
+                                        <Dropdown.Link href={route('profile.edit')}>Profile</Dropdown.Link>
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                                         <Dropdown.Link href={route('logout')} method="post" as="button">
                                             Log Out
                                         </Dropdown.Link>
@@ -98,11 +110,21 @@ export default function Authenticated({ auth, header, children }) {
 
                     <div className="pt-4 pb-1 border-t border-gray-200">
                         <div className="px-4">
+<<<<<<< HEAD
                             <div className="font-medium text-base text-gray-800">{auth.user.name}</div>
+=======
+                            <div className="font-medium text-base text-gray-800">
+                                {auth.user.name}
+                            </div>
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                             <div className="font-medium text-sm text-gray-500">{auth.user.email}</div>
                         </div>
 
                         <div className="mt-3 space-y-1">
+<<<<<<< HEAD
+=======
+                            <ResponsiveNavLink href={route('profile.edit')}>Profile</ResponsiveNavLink>
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                             <ResponsiveNavLink method="post" href={route('logout')} as="button">
                                 Log Out
                             </ResponsiveNavLink>

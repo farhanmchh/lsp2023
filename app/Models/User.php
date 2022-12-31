@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+<<<<<<< HEAD
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -41,4 +42,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+=======
+    use HasApiTokens, HasFactory;
+
+    protected $guarded = ['id'];
+
+    protected $rememberTokenName = 'username';
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
 }

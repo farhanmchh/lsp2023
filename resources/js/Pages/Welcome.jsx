@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 import React from 'react';
 import { Link, Head } from '@inertiajs/inertia-react';
+=======
+import { Link, Head } from "@inertiajs/inertia-react";
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
 
 export default function Welcome(props) {
     return (
@@ -8,17 +12,35 @@ export default function Welcome(props) {
             <div className="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
                 <div className="fixed top-0 right-0 px-6 py-4 sm:block">
                     {props.auth.user ? (
+<<<<<<< HEAD
                         <Link href={route('dashboard')} className="text-sm text-gray-700 dark:text-gray-500 underline">
+=======
+                        <Link
+                            href={route("dashboard")}
+                            className="text-sm text-gray-700 dark:text-gray-500 underline"
+                        >
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                             Dashboard
                         </Link>
                     ) : (
                         <>
+<<<<<<< HEAD
                             <Link href={route('login')} className="text-sm text-gray-700 dark:text-gray-500 underline">
+=======
+                            <Link
+                                href={route("login")}
+                                className="text-sm text-gray-700 dark:text-gray-500 underline"
+                            >
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                                 Log in
                             </Link>
 
                             <Link
+<<<<<<< HEAD
                                 href={route('register')}
+=======
+                                href={route("register")}
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                                 className="ml-4 text-sm text-gray-700 dark:text-gray-500 underline"
                             >
                                 Register
@@ -62,16 +84,30 @@ export default function Welcome(props) {
                                             href="https://laravel.com/docs"
                                             className="underline text-gray-900 dark:text-white"
                                         >
+<<<<<<< HEAD
                                             Documentation
+=======
+                                            Farhan
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                                         </a>
                                     </div>
                                 </div>
 
                                 <div className="ml-12">
                                     <div className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+<<<<<<< HEAD
                                         Laravel has wonderful, thorough documentation covering every aspect of the
                                         framework. Whether you are new to the framework or have previous experience with
                                         Laravel, we recommend reading all of the documentation from beginning to end.
+=======
+                                        Laravel has wonderful, thorough
+                                        documentation covering every aspect of
+                                        the framework. Whether you are new to
+                                        the framework or have previous
+                                        experience with Laravel, we recommend
+                                        reading all of the documentation from
+                                        beginning to end.
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                                     </div>
                                 </div>
                             </div>
@@ -96,16 +132,28 @@ export default function Welcome(props) {
                                             href="https://laracasts.com"
                                             className="underline text-gray-900 dark:text-white"
                                         >
+<<<<<<< HEAD
                                             Laracasts
+=======
+                                            coba lagi lagi LAGI
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                                         </a>
                                     </div>
                                 </div>
 
                                 <div className="ml-12">
                                     <div className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+<<<<<<< HEAD
                                         Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript
                                         development. Check them out, see for yourself, and massively level up your
                                         development skills in the process.
+=======
+                                        Laracasts offers thousands of video
+                                        tutorials on Laravel, PHP, and
+                                        JavaScript development. Check them out,
+                                        see for yourself, and massively level up
+                                        your development skills in the process.
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                                     </div>
                                 </div>
                             </div>
@@ -136,9 +184,17 @@ export default function Welcome(props) {
 
                                 <div className="ml-12">
                                     <div className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+<<<<<<< HEAD
                                         Laravel News is a community driven portal and newsletter aggregating all of the
                                         latest and most important news in the Laravel ecosystem, including new package
                                         releases and tutorials.
+=======
+                                        Laravel News is a community driven
+                                        portal and newsletter aggregating all of
+                                        the latest and most important news in
+                                        the Laravel ecosystem, including new
+                                        package releases and tutorials.
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                                     </div>
                                 </div>
                             </div>
@@ -164,6 +220,7 @@ export default function Welcome(props) {
 
                                 <div className="ml-12">
                                     <div className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+<<<<<<< HEAD
                                         Laravel's robust library of first-party tools and libraries, such as{' '}
                                         <a href="https://forge.laravel.com" className="underline">
                                             Forge
@@ -203,6 +260,79 @@ export default function Welcome(props) {
                                         </a>
                                         ,{' '}
                                         <a href="https://laravel.com/docs/telescope" className="underline">
+=======
+                                        Laravel's robust library of first-party
+                                        tools and libraries, such as{" "}
+                                        <a
+                                            href="https://forge.laravel.com"
+                                            className="underline"
+                                        >
+                                            Forge
+                                        </a>
+                                        ,{" "}
+                                        <a
+                                            href="https://vapor.laravel.com"
+                                            className="underline"
+                                        >
+                                            Vapor
+                                        </a>
+                                        ,{" "}
+                                        <a
+                                            href="https://nova.laravel.com"
+                                            className="underline"
+                                        >
+                                            Nova
+                                        </a>
+                                        , and{" "}
+                                        <a
+                                            href="https://envoyer.io"
+                                            className="underline"
+                                        >
+                                            Envoyer
+                                        </a>{" "}
+                                        help you take your projects to the next
+                                        level. Pair them with powerful open
+                                        source libraries like{" "}
+                                        <a
+                                            href="https://laravel.com/docs/billing"
+                                            className="underline"
+                                        >
+                                            Cashier
+                                        </a>
+                                        ,{" "}
+                                        <a
+                                            href="https://laravel.com/docs/dusk"
+                                            className="underline"
+                                        >
+                                            Dusk
+                                        </a>
+                                        ,{" "}
+                                        <a
+                                            href="https://laravel.com/docs/broadcasting"
+                                            className="underline"
+                                        >
+                                            Echo
+                                        </a>
+                                        ,{" "}
+                                        <a
+                                            href="https://laravel.com/docs/horizon"
+                                            className="underline"
+                                        >
+                                            Horizon
+                                        </a>
+                                        ,{" "}
+                                        <a
+                                            href="https://laravel.com/docs/sanctum"
+                                            className="underline"
+                                        >
+                                            Sanctum
+                                        </a>
+                                        ,{" "}
+                                        <a
+                                            href="https://laravel.com/docs/telescope"
+                                            className="underline"
+                                        >
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                                             Telescope
                                         </a>
                                         , and more.
@@ -227,7 +357,14 @@ export default function Welcome(props) {
                                     <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
                                 </svg>
 
+<<<<<<< HEAD
                                 <a href="https://laravel.bigcartel.com" className="ml-1 underline">
+=======
+                                <a
+                                    href="https://laravel.bigcartel.com"
+                                    className="ml-1 underline"
+                                >
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                                     Shop
                                 </a>
 
@@ -243,14 +380,26 @@ export default function Welcome(props) {
                                     <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                                 </svg>
 
+<<<<<<< HEAD
                                 <a href="https://github.com/sponsors/taylorotwell" className="ml-1 underline">
+=======
+                                <a
+                                    href="https://github.com/sponsors/taylorotwell"
+                                    className="ml-1 underline"
+                                >
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                                     Sponsor
                                 </a>
                             </div>
                         </div>
 
                         <div className="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
+<<<<<<< HEAD
                             Laravel v{props.laravelVersion} (PHP v{props.phpVersion})
+=======
+                            Laravel v{props.laravelVersion} (PHP v
+                            {props.phpVersion})
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                         </div>
                     </div>
                 </div>

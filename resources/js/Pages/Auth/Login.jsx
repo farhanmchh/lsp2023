@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useEffect } from 'react';
+=======
+import { useEffect } from 'react';
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
 import Checkbox from '@/Components/Checkbox';
 import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/InputError';
@@ -41,7 +45,12 @@ export default function Login({ status, canResetPassword }) {
                     <InputLabel forInput="email" value="Email" />
 
                     <TextInput
+<<<<<<< HEAD
                         type="text"
+=======
+                        id="email"
+                        type="email"
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                         name="email"
                         value={data.email}
                         className="mt-1 block w-full"
@@ -57,6 +66,10 @@ export default function Login({ status, canResetPassword }) {
                     <InputLabel forInput="password" value="Password" />
 
                     <TextInput
+<<<<<<< HEAD
+=======
+                        id="password"
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                         type="password"
                         name="password"
                         value={data.password}
@@ -71,7 +84,10 @@ export default function Login({ status, canResetPassword }) {
                 <div className="block mt-4">
                     <label className="flex items-center">
                         <Checkbox name="remember" value={data.remember} handleChange={onHandleChange} />
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                         <span className="ml-2 text-sm text-gray-600">Remember me</span>
                     </label>
                 </div>
@@ -80,7 +96,11 @@ export default function Login({ status, canResetPassword }) {
                     {canResetPassword && (
                         <Link
                             href={route('password.request')}
+<<<<<<< HEAD
                             className="underline text-sm text-gray-600 hover:text-gray-900"
+=======
+                            className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                         >
                             Forgot your password?
                         </Link>

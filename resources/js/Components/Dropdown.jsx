@@ -1,4 +1,4 @@
-import React, { useState, useContext, Fragment } from 'react';
+import React, { createContext, useState, useContext, Fragment } from 'react';
 import { Link } from '@inertiajs/inertia-react';
 import { Transition } from '@headlessui/react';
 
@@ -70,7 +70,11 @@ const Content = ({ align = 'right', width = '48', contentClasses = 'py-1 bg-whit
     );
 };
 
+<<<<<<< HEAD
 const DropdownLink = ({ href, method = 'post', as = 'a', children }) => {
+=======
+const DropdownLink = ({ href, method, as, children }) => {
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
     return (
         <Link
             href={href}

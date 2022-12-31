@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useEffect } from 'react';
+=======
+import { useEffect } from 'react';
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
 import GuestLayout from '@/Layouts/GuestLayout';
 import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
@@ -27,7 +31,11 @@ export default function ResetPassword({ token, email }) {
     const submit = (e) => {
         e.preventDefault();
 
+<<<<<<< HEAD
         post(route('password.update'));
+=======
+        post(route('password.store'));
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
     };
 
     return (
@@ -39,6 +47,10 @@ export default function ResetPassword({ token, email }) {
                     <InputLabel forInput="email" value="Email" />
 
                     <TextInput
+<<<<<<< HEAD
+=======
+                        id="email"
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                         type="email"
                         name="email"
                         value={data.email}
@@ -54,6 +66,10 @@ export default function ResetPassword({ token, email }) {
                     <InputLabel forInput="password" value="Password" />
 
                     <TextInput
+<<<<<<< HEAD
+=======
+                        id="password"
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
                         type="password"
                         name="password"
                         value={data.password}

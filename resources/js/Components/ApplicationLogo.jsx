@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 import React from 'react';
 
+=======
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
 export default function ApplicationLogo({ className }) {
     return (
         <svg className={className} viewBox="0 0 316 316" xmlns="http://www.w3.org/2000/svg">

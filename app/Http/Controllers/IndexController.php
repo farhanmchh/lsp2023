@@ -2,89 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Administrator;
+use App\Models\Guru;
+use App\Models\Siswa;
+use App\Models\User;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
-use inertia\Inertia;
+use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class IndexController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function login()
-    {
-        return Inertia::render('Login');
+  public function index()
+  {
+    return Inertia::render('Login');
+  }
+
+  public function login(Request $request)
+  {
+    $user = User::where('username', $request->username)->where('password', $request->password)->first();
+
+    if ($user) {
+      Auth::loginUsingId($user->id);
+
+      return redirect('/home');
     }
 
-    public function home()
-    {
-        return Inertia::render('Home');
-    }
+    return back()->with('message', 'invalid authentication');
+  }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+  public function home()
+  {
+    return Inertia::render('Home');
+  }
 }

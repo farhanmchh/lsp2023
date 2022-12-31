@@ -30,7 +30,11 @@ class HandleInertiaRequests extends Middleware
      * Define the props that are shared by default.
      *
      * @param  \Illuminate\Http\Request  $request
+<<<<<<< HEAD
      * @return array
+=======
+     * @return mixed[]
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
      */
     public function share(Request $request)
     {
@@ -43,6 +47,12 @@ class HandleInertiaRequests extends Middleware
                     'location' => $request->url(),
                 ]);
             },
+<<<<<<< HEAD
+=======
+            'flash' => [
+                'message' => fn () => $request->session()->get('message')
+            ],
+>>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
         ]);
     }
 }
