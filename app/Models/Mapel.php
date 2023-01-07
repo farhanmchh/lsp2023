@@ -12,3 +12,4 @@ class Mapel extends Model
   protected $table = 'mapels';
   protected $guarded = ['id'];
 }
+

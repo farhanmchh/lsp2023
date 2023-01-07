@@ -16,13 +16,13 @@ export default function Layout({children}) {
             <div className="menu">
                 <b>
                     <Link href="/home" className="">Home</Link>
-                    <Link href="/guru" className="">Guru</Link>
-                    <Link href="/jurusan" className="">Jurusan</Link>
-                    <Link href="/kelas" className="">Kelas</Link>
-                    <Link href="/siswa" className="">Siswa</Link>
-                    <Link href="/mapel" className="">Mata Pelajaran</Link>
-                    <Link href="/mengajar" className="">Mengajar</Link>
-                    <Link href="/nilai" className="">Nilai</Link>
+                    <Link href="/guru/index" className="">Guru</Link>
+                    <Link href="/jurusan/index" className="">Jurusan</Link>
+                    <Link href="/kelas/index" className="">Kelas</Link>
+                    <Link href="/siswa/index" className="">Siswa</Link>
+                    <Link href="/mapel/index" className="">Mata Pelajaran</Link>
+                    <Link href="/mengajar/index" className="">Mengajar</Link>
+                    <Link href="/nilai/index" className="">Nilai</Link>
                     <Link href="" className="">Logout</Link>
                 </b>
             </div>

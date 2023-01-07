@@ -15,6 +15,10 @@ const Index = () => {
                             <th>MATA PELAJARAN</th>
                             <th>NAMA SISWA</th>
                             <th>KELAS</th>
+                            <th>UH</th>
+                            <th>PTS</th>
+                            <th>PAS</th>
+                            <th>NA</th>
                             <th>ACTION</th>
                         </tr>
                         <tr>
@@ -22,6 +26,10 @@ const Index = () => {
                             <td>Basis Data</td>
                             <td>Aleya</td>
                             <td>12 RPL 1</td>
+                            <td>90</td>
+                            <td>90</td>
+                            <td>90</td>
+                            <td>90</td>
                             <td>
                                 <button className="button-warning">Edit</button>
                                 <button className="button-danger">Hapus</button>

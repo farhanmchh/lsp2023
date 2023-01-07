@@ -12,3 +12,4 @@ class Administrator extends Model
   protected $table = 'administrators';
   protected $guarded = ['id'];
 }
+
