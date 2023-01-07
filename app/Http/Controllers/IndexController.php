@@ -59,7 +59,7 @@ class IndexController extends Controller
 
   public function home()
   {
-    return view('home');
+    return Inertia::render('Home');
   }
 
   public function logout(Request $request)

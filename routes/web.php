@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',[IndexController::class,'index']);
-Route::post('/login', [IndexController::class, 'login']);
+Route::post('/login/admin', [IndexController::class, 'loginAdmin']);
+Route::post('/login/siswa', [IndexController::class, 'loginSiswa']);
+Route::post('/login/guru', [IndexController::class, 'loginGuru']);
 Route::get('/home',[IndexController::class,'home']);
 
 Route::prefix('guru')->group(function() {
