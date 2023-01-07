@@ -12,3 +12,4 @@ class Guru extends Model
   protected $table = 'gurus';
   protected $guarded = ['id'];
 }
+

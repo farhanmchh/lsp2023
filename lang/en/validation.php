@@ -139,10 +139,7 @@ return [
     'timezone' => 'The :attribute must be a valid timezone.',
     'unique' => 'The :attribute has already been taken.',
     'uploaded' => 'The :attribute failed to upload.',
-<<<<<<< HEAD
-=======
     'uppercase' => 'The :attribute must be uppercase.',
->>>>>>> 3c8e8ffbfd64f6f4f5f4cfde92b1c5013f6fb596
     'url' => 'The :attribute must be a valid URL.',
     'uuid' => 'The :attribute must be a valid UUID.',
 

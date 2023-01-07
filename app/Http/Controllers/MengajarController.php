@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guru;
+use App\Models\Kelas;
+use App\Models\Mapel;
+use App\Models\Mengajar;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -14,7 +18,9 @@ class MengajarController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Mengajar/Index');
+        return view('mengajar.index', [
+            'mengajar' => Mengajar::all()
+        ]);
     }
 
     /**
@@ -24,7 +30,11 @@ class MengajarController extends Controller
      */
     public function create()
     {
-        //
+        return view('mengajar.create',[
+            'guru' => Guru::all(),
+            'mapel' => Mapel::all(),
+            'kelas' => Kelas::all()
+        ]);
     }
 
     /**
@@ -35,7 +45,14 @@ class MengajarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data_mengajar = $request->validate([
+            'guru_id' => ['required'],
+            'mapel_id' => ['required'],
+            'kelas_id' => ['required']
+        ]);
+        Mengajar::create($data_mengajar);
+        return redirect('/mengajar/index')->with('success', "Data Mengajar Berhasil di Simpan");
+
     }
 
     /**
@@ -55,9 +72,14 @@ class MengajarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Mengajar $mengajar)
     {
-        //
+        return view('mengajar.edit', [
+            'mengajar' => $mengajar,
+            'guru' => Guru::all(),
+            'mapel' => Mapel::all(),
+            'kelas' => Kelas::all()
+        ]);
     }
 
     /**
@@ -67,9 +89,15 @@ class MengajarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Mengajar $mengajar)
     {
-        //
+        $data_mengajar = $request->validate([
+            'guru_id' => ['required'],
+            'mapel_id' => ['required'],
+            'kelas_id' => ['required']
+        ]);
+        $mengajar->update($data_mengajar);
+        return redirect('/mengajar/index')->with('success', "Data Mengajar Berhasil di Ubah");
     }
 
     /**
@@ -78,8 +106,15 @@ class MengajarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Mengajar $mengajar, $id)
     {
-        //
+        // $nilai = Mengajar::where('mengajar_id', $mengajar->id)->first();
+        
+        // if ($nilai) {
+        //     return back()->with('error',"Data mengajar ini masih digunakan di menu nilai");
+        // }
+        // $mengajar->delete();
+        Mengajar::where('id',$id)->delete();
+        return back()->with('success',"Data Mengajar Berhasil di Hapus");
     }
 }
