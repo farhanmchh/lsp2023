@@ -2,16 +2,35 @@ import { Inertia } from "@inertiajs/inertia";
 import { Head } from "@inertiajs/inertia-react";
 import React, { useState } from "react";
 import { usePage } from "@inertiajs/inertia-react";
+import "../../../resources/css/style.css";
 
 export default function Login() {
-    // const props = usePage().props;
-    const [username, setUsername] = useState();
+    const { error } = usePage().props.errors;
+    const [kodeAdmin, setKodeAdmin] = useState();
+    const [nis, setNis] = useState();
+    const [nip, setNip] = useState();
     const [password, setPassword] = useState();
 
-    const handleLogin = () => {
-        Inertia.post("/login", {
-            username: username,
-            password: password,
+    const [formAdminVisible, setFormAdminVisible] = useState(false);
+    const [formSiswaVisible, setFormSiswaVisible] = useState(false);
+    const [formGuruVisible, setFormGuruVisible] = useState(false);
+
+    const handleLoginAdmin = () => {
+        Inertia.post("/login/admin", {
+            kodeAdmin,
+            password,
+        });
+    };
+    const handleLoginSiswa = () => {
+        Inertia.post("/login/siswa", {
+            nis,
+            password,
+        });
+    };
+    const handleLoginGuru = () => {
+        Inertia.post("/login/guru", {
+            nip,
+            password,
         });
     };
 
@@ -35,7 +54,17 @@ export default function Login() {
                 <fieldset>
                     <legend></legend>
 
-                    {/* <center>
+                    <center>
+                        <button
+                            className="button"
+                            onClick={() => {
+                                setFormAdminVisible(!formAdminVisible);
+                                setFormSiswaVisible(false);
+                                setFormGuruVisible(false);
+                            }}
+                        >
+                            Admin
+                        </button>
                         <button
                             className="button"
                             onClick={() => {
@@ -56,37 +85,27 @@ export default function Login() {
                         >
                             Guru
                         </button>
-                        <button
-                            className="button"
-                            onClick={() => {
-                                setFormAdminVisible(!formAdminVisible);
-                                setFormSiswaVisible(false);
-                                setFormGuruVisible(false);
-                            }}
-                        >
-                            Admin
-                        </button>
 
                         <hr />
                         <b>Login sesuai dengan anda</b>
                         <hr />
-                    </center> */}
+                    </center>
 
                     <div
-                    // style={{ display: formAdminVisible ? "block" : "none" }}
+                        style={{ display: formAdminVisible ? "block" : "none" }}
                     >
                         <center>
-                            <b>Login</b>
+                            <b>Login Admin</b>
+                            <p>{error}</p>
                         </center>
                         <table>
                             <tr>
-                                <td width="25%">Username</td>
+                                <td width="25%">Kode Admin</td>
                                 <td width="25%">
                                     <input
                                         type="text"
-                                        // name="username"
                                         onChange={(e) =>
-                                            setUsername(e.target.value)
+                                            setKodeAdmin(e.target.value)
                                         }
                                     />
                                 </td>
@@ -96,7 +115,6 @@ export default function Login() {
                                 <td width="25%">
                                     <input
                                         type="password"
-                                        // name="password"
                                         onChange={(e) =>
                                             setPassword(e.target.value)
                                         }
@@ -109,7 +127,93 @@ export default function Login() {
                                         <button
                                             className="button"
                                             type="button"
-                                            onClick={() => handleLogin()}
+                                            onClick={() => handleLoginAdmin()}
+                                        >
+                                            Login
+                                        </button>
+                                    </center>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div
+                        style={{ display: formSiswaVisible ? "block" : "none" }}
+                    >
+                        <center>
+                            <b>Login Siswa</b>
+                            <p>{error}</p>
+                        </center>
+                        <table>
+                            <tr>
+                                <td width="25%">NIS</td>
+                                <td width="25%">
+                                    <input
+                                        type="text"
+                                        onChange={(e) => setNis(e.target.value)}
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="25%">Password</td>
+                                <td width="25%">
+                                    <input
+                                        type="password"
+                                        onChange={(e) =>
+                                            setPassword(e.target.value)
+                                        }
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colSpan="2">
+                                    <center>
+                                        <button
+                                            className="button"
+                                            type="button"
+                                            onClick={() => handleLoginSiswa()}
+                                        >
+                                            Login
+                                        </button>
+                                    </center>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div
+                        style={{ display: formGuruVisible ? "block" : "none" }}
+                    >
+                        <center>
+                            <b>Login Guru</b>
+                            <p>{error}</p>
+                        </center>
+                        <table>
+                            <tr>
+                                <td width="25%">NIP</td>
+                                <td width="25%">
+                                    <input
+                                        type="text"
+                                        onChange={(e) => setNip(e.target.value)}
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="25%">Password</td>
+                                <td width="25%">
+                                    <input
+                                        type="password"
+                                        onChange={(e) =>
+                                            setPassword(e.target.value)
+                                        }
+                                    />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colSpan="2">
+                                    <center>
+                                        <button
+                                            className="button"
+                                            type="button"
+                                            onClick={() => handleLoginGuru()}
                                         >
                                             Login
                                         </button>

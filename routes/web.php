@@ -14,16 +14,22 @@ use Inertia\Inertia;
 
 
 Route::get('/',[IndexController::class,'index']);
-Route::post('/login', [IndexController::class, 'login']);
-Route::get('/home',[IndexController::class,'home']);
+Route::post('/login/admin', [IndexController::class, 'loginAdmin']);
+Route::post('/login/siswa', [IndexController::class, 'loginSiswa']);
+Route::post('/login/guru', [IndexController::class, 'loginGuru']);
+Route::get('/home',[IndexController::class,'home'])->middleware('role:admin');
+Route::post('/logout',[IndexController::class,'logout']);
+
 Route::get('/guru',[GuruController::class, 'index']);
+Route::get('/guru/create',[GuruController::class, 'create']);
+Route::post('/guru/store',[GuruController::class, 'store']);
+
 Route::get('/jurusan',[JurusanController::class, 'index']);
 Route::get('/kelas',[KelasController::class,'index']);
 Route::get('/siswa',[SiswaController::class,'index']);
 Route::get('/mapel',[MapelController::class, 'index']);
 Route::get('mengajar',[MengajarController::class,'index']);
 Route::get('/nilai',[NilaiController::class,'index']);
-
 
 // Route::get('/dashboard', function () {
 //     return Inertia::render('Dashboard');

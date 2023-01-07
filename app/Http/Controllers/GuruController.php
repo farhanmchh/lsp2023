@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guru;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -14,7 +16,7 @@ class GuruController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Guru/Index');
+        return Inertia::render('Guru/Index', ['data' => Guru::all()]);
     }
 
     /**
@@ -24,7 +26,7 @@ class GuruController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Guru/Create');
     }
 
     /**
@@ -35,7 +37,21 @@ class GuruController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = User::create([
+          'username' => $request->nip, 
+          'role_id' => 2, 
+          'password' => $request->password
+        ]);
+
+        $guru = Guru::create([
+          'name' => $request->name,
+          'user_id' => $user->id,
+          'nip' => $request->nip,
+          'jk' => $request->jk,
+          'alamat' => $request->alamat
+        ]);
+
+        return redirect('/guru');
     }
 
     /**

@@ -15,12 +15,11 @@ return new class extends Migration
   {
     Schema::create('siswas', function (Blueprint $table) {
       $table->id();
-      $table->integer('user_id');
-      $table->string('nama_siswa');
+      $table->string('nis');
+      $table->string('name');
       $table->enum('jk', ['L', 'P']);
       $table->text('alamat');
       $table->integer('id_kelas');
-      $table->string('password');
       $table->timestamps();
     });
   }

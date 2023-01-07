@@ -18,21 +18,56 @@ class IndexController extends Controller
     return Inertia::render('Login');
   }
 
-  public function login(Request $request)
+  public function loginAdmin(Request $request)
   {
-    $user = User::where('username', $request->username)->where('password', $request->password)->first();
+    $admin = Administrator::where('kode_admin', $request->kodeAdmin)->where('password', $request->password)->first();
+    
+    if (!$admin) return back()->with('error', "kode admin atau password salah");
+    
+    $admin->role = 'admin';
+    session(['user' => $admin]);
 
-    if ($user) {
-      Auth::loginUsingId($user->id);
+    return redirect('/home');
+    
+  }
 
-      return redirect('/home');
-    }
+  public function loginSiswa(Request $request)
+  {
+    $siswa = Siswa::where('nis', $request->nis)->where('password', $request->password)->first();
 
-    return back()->with('message', 'invalid authentication');
+    if (!$siswa) return back()->with('error', "nis atau password salah");
+
+    $siswa->role = 'siswa';
+    session(['user' => $siswa]);
+
+    return redirect('/home');
+
+  }
+
+  public function loginGuru(Request $request)
+  {
+    $guru = Guru::where('nip', $request->nis)->where('password', $request->password)->first();
+
+    if (!$guru) return back()->with('error', "nip atau password salah");
+
+    $guru->role = 'guru';
+    session(['user' => $guru]);
+
+    return redirect('/home');
+
   }
 
   public function home()
   {
     return Inertia::render('Home');
+  }
+
+  public function logout(Request $request)
+  {
+    $request->session()->invalidate();
+
+    $request->session()->regenerateToken();
+
+    return redirect('/');
   }
 }
