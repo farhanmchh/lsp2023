@@ -30,7 +30,7 @@ class MengajarController extends Controller
      */
     public function create()
     {
-        return view('mengajar.create',[
+        return view('mengajar.create', [
             'guru' => Guru::all(),
             'mapel' => Mapel::all(),
             'kelas' => Kelas::all()
@@ -52,7 +52,6 @@ class MengajarController extends Controller
         ]);
         Mengajar::create($data_mengajar);
         return redirect('/mengajar/index')->with('success', "Data Mengajar Berhasil di Simpan");
-
     }
 
     /**
@@ -106,15 +105,9 @@ class MengajarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Mengajar $mengajar, $id)
+    public function destroy(Mengajar $mengajar)
     {
-        // $nilai = Mengajar::where('mengajar_id', $mengajar->id)->first();
-        
-        // if ($nilai) {
-        //     return back()->with('error',"Data mengajar ini masih digunakan di menu nilai");
-        // }
-        // $mengajar->delete();
-        Mengajar::where('id',$id)->delete();
-        return back()->with('success',"Data Mengajar Berhasil di Hapus");
+        $mengajar->delete();
+        return back()->with('success', "Data Mengajar Berhasil di Hapus");
     }
 }

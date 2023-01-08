@@ -19,6 +19,7 @@ return new class extends Migration
       $table->string('nama_guru');
       $table->enum('jk', ['L', 'P']);
       $table->text('alamat');
+      $table->string('password');
       $table->timestamps();
     });
   }

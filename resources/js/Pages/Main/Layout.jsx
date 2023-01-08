@@ -1,10 +1,11 @@
 import React from "react";
 import "../../../css/style.css";
 import headerImage from "../../../src/images/header.jpg";
-import { Link } from "@inertiajs/inertia-react";
+import { Link, usePage } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 
 export default function Layout({ children }) {
+    const { user } = usePage().props.auth
     return (
         <>
             {/* ----------HEADER---------- */}
@@ -15,37 +16,20 @@ export default function Layout({ children }) {
             {/* ----------MENU---------- */}
             <div className="menu">
                 <b>
-                    <Link href="/home" className="">
-                        Home
-                    </Link>
-                    <Link href="/guru" className="">
-                        Guru
-                    </Link>
-                    <Link href="/jurusan" className="">
-                        Jurusan
-                    </Link>
-                    <Link href="/kelas" className="">
-                        Kelas
-                    </Link>
-                    <Link href="/siswa" className="">
-                        Siswa
-                    </Link>
-                    <Link href="/mapel" className="">
-                        Mata Pelajaran
-                    </Link>
-                    <Link href="/mengajar" className="">
-                        Mengajar
-                    </Link>
-                    <Link href="/nilai" className="">
-                        Nilai
-                    </Link>
-                    <button
-                        // href="#"
-                        className=""
-                        onClick={() => Inertia.post("/logout")}
-                    >
-                        Logout
-                    </button>
+                    <a href="/home">Home</a>
+                    {user.role == 'admin' ? (
+                        <>
+                            <a href="/guru/index">Guru</a>
+                            <a href="/jurusan/index">Jurusan</a>
+                            <a href="/kelas/index">Kelas</a>
+                            <a href="/siswa/index">Siswa</a>
+                            <a href="/mapel/index">Mata Pelajaran</a>
+                            <a href="/mengajar/index">Mengajar</a>
+                        </>
+                    ) : (
+                        <a href="/nilai/index">Nilai</a>
+                    )}
+                    <a href="/logout">Logout</a>
                 </b>
             </div>
 

@@ -6,7 +6,7 @@ import "../../../resources/css/style.css";
 
 export default function Login() {
     const { error } = usePage().props.errors;
-    const [kodeAdmin, setKodeAdmin] = useState();
+    const [idAdmin, setIdAdmin] = useState();
     const [nis, setNis] = useState();
     const [nip, setNip] = useState();
     const [password, setPassword] = useState();
@@ -17,7 +17,7 @@ export default function Login() {
 
     const handleLoginAdmin = () => {
         Inertia.post("/login/admin", {
-            kodeAdmin,
+            idAdmin,
             password,
         });
     };
@@ -105,7 +105,7 @@ export default function Login() {
                                     <input
                                         type="text"
                                         onChange={(e) =>
-                                            setKodeAdmin(e.target.value)
+                                            setIdAdmin(e.target.value)
                                         }
                                     />
                                 </td>

@@ -17,6 +17,7 @@ Route::post('/login/admin', [IndexController::class, 'loginAdmin']);
 Route::post('/login/siswa', [IndexController::class, 'loginSiswa']);
 Route::post('/login/guru', [IndexController::class, 'loginGuru']);
 Route::get('/home',[IndexController::class,'home']);
+Route::get('/logout',[IndexController::class,'logout']);
 
 Route::prefix('guru')->group(function() {
     Route::get('/index',[GuruController::class, 'index']);
@@ -68,5 +69,10 @@ Route::prefix('mengajar')->group(function() {
 });
 Route::prefix('nilai')->group(function() {
     Route::get('/index',[NilaiController::class,'index']);
+    Route::get('/create',[NilaiController::class,'create']);
+    Route::post('/store',[NilaiController::class,'store']);
+    Route::get('/edit/{nilai}',[NilaiController::class,'edit']);
+    Route::post('/update/{nilai}',[NilaiController::class,'update']);
+    Route::get('/destroy/{nilai}',[NilaiController::class,'destroy']);
 });
 

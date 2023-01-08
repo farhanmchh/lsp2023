@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         Administrator::create([
-            'kode_admin' => '123',
+            'id_admin' => '123',
             'password' => '123'
         ]);
     }

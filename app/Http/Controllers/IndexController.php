@@ -20,15 +20,14 @@ class IndexController extends Controller
 
   public function loginAdmin(Request $request)
   {
-    $admin = Administrator::where('kode_admin', $request->kodeAdmin)->where('password', $request->password)->first();
-    
+    $admin = Administrator::where('id_admin', $request->idAdmin)->where('password', $request->password)->first();
+
     if (!$admin) return back()->with('error', "kode admin atau password salah");
-    
+
     $admin->role = 'admin';
     session(['user' => $admin]);
 
     return redirect('/home');
-    
   }
 
   public function loginSiswa(Request $request)
@@ -41,12 +40,11 @@ class IndexController extends Controller
     session(['user' => $siswa]);
 
     return redirect('/home');
-
   }
 
   public function loginGuru(Request $request)
   {
-    $guru = Guru::where('nip', $request->nis)->where('password', $request->password)->first();
+    $guru = Guru::where('nip', $request->nip)->where('password', $request->password)->first();
 
     if (!$guru) return back()->with('error', "nip atau password salah");
 
@@ -54,7 +52,6 @@ class IndexController extends Controller
     session(['user' => $guru]);
 
     return redirect('/home');
-
   }
 
   public function home()

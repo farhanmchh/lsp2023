@@ -11,22 +11,22 @@ class SiswaController extends Controller
 {
     public function index()
     {
-        return view('siswa.index',[
+        return view('siswa.index', [
             'siswa' => Siswa::all()
         ]);
     }
 
     public function create()
     {
-        return view('siswa.create',[
-            'kelas' => Kelas::all()
+        return view('siswa.create', [
+            'kelas' => Kelas::with('jurusan')->get()
         ]);
     }
 
     public function store(Request $request)
     {
         $data_siswa = $request->validate([
-            'nis' => ['required','numeric'],
+            'nis' => ['required', 'numeric'],
             'nama_siswa' => ['required'],
             'jk' => ['required'],
             'alamat' => ['required'],
@@ -34,7 +34,7 @@ class SiswaController extends Controller
             'password' => ['required']
         ]);
         Siswa::create($data_siswa);
-        return redirect('/siswa/index')->with('success','Data Siswa Berhasil di Tambah');
+        return redirect('/siswa/index')->with('success', 'Data Siswa Berhasil di Tambah');
     }
 
     public function show($id)
@@ -44,7 +44,7 @@ class SiswaController extends Controller
 
     public function edit(Siswa $siswa)
     {
-        return view('siswa.edit',[
+        return view('siswa.edit', [
             'siswa' => $siswa,
             'kelas' => Kelas::all()
 
@@ -62,18 +62,18 @@ class SiswaController extends Controller
             'password' => ['required']
         ]);
         $siswa->update($data_siswa);
-        return redirect('/siswa/index')->with('success','Data Siswa Berhasil di Ubah');
+        return redirect('/siswa/index')->with('success', 'Data Siswa Berhasil di Ubah');
     }
 
     public function destroy(Siswa $siswa)
     {
         $nilai = Nilai::where('siswa_id', $siswa->id)->first();
-        
+
         if ($nilai) {
-            return back()->with('error',"$siswa->nama_siswa masih digunakan di menu nilai");
+            return back()->with('error', "$siswa->nama_siswa masih digunakan di menu nilai");
         }
 
         $siswa->delete();
-        return back()->with('success',"Data Siswa Berhasil di Hapus");
+        return back()->with('success', "Data Siswa Berhasil di Hapus");
     }
 }
